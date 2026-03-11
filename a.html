@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>Upload Missing Content | Myrient</title>
+<meta name="title" content="Upload Missing Content | Myrient">
+<meta name="description" content="Experience an unmatched video game archive with fast downloads and no ads.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Upload Missing Content | Myrient">
+<meta property="og:description" content="Experience an unmatched video game archive with fast downloads and no ads.">
+<meta name="theme-color" content="#61666c">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/assets/main.css">
+</head>
+<body class=static>
+<pre style="font: 10px/9px monospace; color: white; text-align: center;">
+______  ___              _____            _____ 
+___   |/  /____  ___________(_)_____________  /_
+__  /|_/ /__  / / /_  ___/_  /_  _ \_  __ \  __/
+_  /  / / _  /_/ /_  /   _  / /  __/  / / / /_  
+/_/  /_/  _\__, / /_/    /_/  \___//_/ /_/\__/  
+          /____/                                
+
+</pre>
+<pre style="font: 14px/13px monospace; color: white; text-align: center;">Where sharing is a priority</pre>
+<br>
+<p style="text-align: center; color: #FF073A; font-size: 1.4em;">Myrient will shut down on 31 March 2026. Download any content you find important.</p>
+<p style="text-align: center; color: #FF073A; font-size: 1.4em;">More information can be found on our <a href="https://discord.gg/4kVP9AuQ24" style="color: #FF073A" target="_blank">Discord server</a> and <a href="https://t.me/s/myrient/107" style="color: #FF073A" target="_blank">Telegram channel</a>.</p>
+<br>
+<div class="row">
+<a href="/" class="menu">Home</a> | 
+<a href="/files/" class="menu">Files</a> | 
+<a href="/donate/" class="menu" style="color: #FF5F1F;">Donate</a> | 
+<a href="/upload/" class="menu">Upload</a> | 
+<a href="/faq/" class="menu">FAQ</a> | 
+<a href="https://discord.gg/4kVP9AuQ24" class="menu" target="_blank">Discord</a> | 
+<a href="https://t.me/s/myrient" class="menu" target="_blank">Telegram</a> | 
+<a href="/contact/" class="menu">Contact Us</a> | 
+<a href="https://hshop.erista.me" class="menu" target="_blank">hShop</a>
+</div>
+<br>
+<p style="text-align: center; color: #FF5F1F; font-size: 1.2em;"><a href="/donate/" style="text-align: center; color: #FF5F1F">If you found Myrient useful, please support us with a donation!</a></p>
+<br>
+<h1>Upload Missing Content</h1>
+<br>
+<h2>Before uploading</h2>
+<hr>
+<p>Fix DATs are available to download <a href="/fixdats/" target="_blank">here</a>. Please check the fix DATs before uploading. Any uploaded content not listed in the fix DATs will be deleted with the exception of content that will be included in upcoming DAT versions or new DAT files. Fix DATs are updated to the latest versions on a weekly basis.</p>
+<br>
+<p>A list of files which have been uploaded and are pending verification and addition to Myrient is available <a href="/upload/pending.txt" target="_blank">here</a>. This list is updated every 5 minutes.</p>
+<br>
+<h2>What file types can be uploaded</h2>
+<hr>
+<p>The following file format is recommended for the fastest verification and addition to Myrient:</p>
+<ul>
+<li>TorrentZip</li>
+<li>ZIP</li>
+<li>CHD (please do not compress CHD files, otherwise they will not be verified correctly)</li>
+<li>Raw/uncompressed files</li>
+</ul>
+<br>
+<p>A utility such as <a href="https://romvault.com/trrntzip/" target="_blank">TrrntZip</a> is recommended in order to convert existing zip and 7z files to TorrentZip. If you would like to upload zip or 7z raw files, please add them to a zip archive before converting them to TorrentZip.</p>
+<p>You may upload a single TorrentZip archive file with files for multiple different fix DATs inside.</p>
+<br>
+<p>The following file formats are not recommended and will result in slower verification and addition to Myrient:</p>
+<ul>
+<li>7Z</li>
+</ul>
+<br>
+<p>All other archive and compression file formats should not be uploaded unless they are listed in the fix DATs.</p>
+<p>Uploading an archive or a compression file format other than zip or 7z will result in the file not being verified correctly or being deleted.</p>
+<br>
+<h2>How to upload missing content</h2>
+<hr>
+<h3>From a web browser (for small files)</h3>
+<p>Please use Myrient's upload page <a href="https://upload.erista.me/s/XjkAYYi2S8RNDtF" target="_blank">here</a> to upload missing content from a web browser.</p>
+<br>
+<h3>From the command-line interface (CLI) using curl (for small files)</h3>
+<p>Please use Myrient's upload endpoint at <code>https://upload.erista.me/public.php/dav/files/XjkAYYi2S8RNDtF/</code> to upload missing content from the CLI. An example command using curl is shown below:</p>
+<p><code>curl -T "/path/to/file.zip" "https://upload.erista.me/public.php/dav/files/XjkAYYi2S8RNDtF/file.zip"</code></p>
+<br>
+<h3>From the command-line interface (CLI) using S3 (for large and small files)</h3>
+<p>Please use Myrient's S3 endpoint to upload missing content from the CLI. The access details are as follows:</p>
+<p>Endpoint: <code>https://s3.upload.erista.me</code></p>
+<p>Access Key: <code>yuxJ1a8rVE8eEWCXai26</code></p>
+<p>Secret Key: <code>3AYh668XMvSOdkZYa2tdE4IB3ryJNIdLRsUIwNxw</code></p>
+<p>Bucket Name: <code>myrient</code></p>
+<br>
+<p>To upload using <a href="https://rclone.org" target="_blank">Rclone</a>, open a terminal or command prompt and run <code>rclone config create Myrient s3 provider Ceph access_key_id yuxJ1a8rVE8eEWCXai26 secret_access_key 3AYh668XMvSOdkZYa2tdE4IB3ryJNIdLRsUIwNxw endpoint "https://s3.upload.erista.me"</code> to set up a S3 compatible remote. Use the following example command to start uploading: <code>rclone copy "/path/of/folder/or/file" "Myrient:myrient" -vP</code></p>
+<br>
+<p>There is no file size limit or limit on the number of files uploaded. The process of verifying and adding uploaded files to Myrient according to the latest DAT files occurs on a weekly basis.</p>
+<br>
+<h2>Frequently Asked Questions</h2>
+<hr>
+<h3>Why was the directory I was trying to access or the file I was trying to download no longer available?</h3>
+<p>Since the process of verifying and adding uploaded files to Myrient also renames, moves, and removes directories and content as needed according to the latest DAT files, some URLs may break as a result. Any affected directories or content may be available to access or download from new URLs.</p>
+<br>
+<h3>What happens if uploads have begun being verified and added but I still have uploads in progress?</h3>
+<p>Any files which have finished uploading will be verified and added to Myrient and any files which are still being uploaded will be verified and added the next time the process occurs.</p>
+<br>
+<h3>If a file with the same hash and size is present in multiple fix DATs, should I upload the file more than once and with different filenames?</h3>
+<p>Files present in multiple fix DATs (Redump and TOSEC-ISO for example) do not need to be uploaded more than once. Our backend replicates the file in multiple locations as necessary.</p>
+<br>
+<h3>Where can I download the DATs Myrient uses to curate the collections?</h3>
+<p>You can download the DATs <a href="/dats/" target="_blank">here</a>. DATs are updated to the latest versions on a weekly basis at the same time as fix DATs. Please note that a ROM manager such as <a href="https://www.romvault.com/" target="_blank">RomVault</a> is recommended in order to use the DATs effectively.<p>
+<hr>
+<p style="text-align: center;">Myrient is an <a href="https://erista.me/" target="_blank">Erista</a> service.</p>
+<footer>
+<a href="/non-affiliation-disclaimer/">Non-Affiliation Disclaimer</a> | 
+<a href="/dmca/">DMCA</a>
+</footer>
+</body>
+</html>
